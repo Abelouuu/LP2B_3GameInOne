@@ -4924,7 +4924,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: c0cfc588b3bd9df428a524396c1e7d0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4994,13 +4994,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a0384f2757b35478f9d78950b2d335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  shootVolume: 0.5
   enterSpeed: 2
   chargeSpeed: 15
   pauseDuration: 1
   visibleXPosition: 8
   destroyXPosition: -10
   chargeSound: {fileID: 8300000, guid: 123523928d088af4487e9adced8fe7bb, type: 3}
-  shootVolume: 0.5
 --- !u!50 &3359719184120698918
 Rigidbody2D:
   serializedVersion: 5
@@ -5071,6 +5071,8 @@ MonoBehaviour:
   enemyType: Ram
   explosionAnim: {fileID: 5613652202286379538, guid: 880e9b882e5e6564abfebbf5d8464e33, type: 3}
   scale: 0.3
+  instantKilledByBomb: 1
+  bombDamage: 20
 --- !u!114 &3992302482227045147
 MonoBehaviour:
   m_ObjectHideFlags: 0

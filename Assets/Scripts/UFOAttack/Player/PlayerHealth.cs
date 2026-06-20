@@ -149,19 +149,4 @@ public class PlayerHealth : MonoBehaviour
             yield return null;
         }
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            TakeDamage(1);
-        }
-
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            Heal(1);
-        }
-    }
-
-
 }

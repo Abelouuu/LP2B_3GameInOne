@@ -107,7 +107,7 @@ public class LaserAnimation : MonoBehaviour
         while (t < growLaserDuration2+growLaserDuration1)
         {
             t += Time.deltaTime;
-            float ratio = t / growLaserDuration2+growLaserDuration1;
+            float ratio = t / (growLaserDuration2 + growLaserDuration1);
 
             float y = Mathf.Lerp(laserScaleY, 0f, ratio);
             laser.localScale = new Vector3(laserScaleX, y, 1f);

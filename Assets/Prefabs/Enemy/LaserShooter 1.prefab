@@ -86,7 +86,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: fe055922f1591e440a44ffa027d5f9a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -110,11 +110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9440868e7be8da4296759d39646a428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  shootVolume: 0.5
   laserPrefab: {fileID: 1997216839028825819, guid: 841ef04a7ed329a45b195cf69ea89a77, type: 3}
   horizontalSpeed: 5
   verticalSpeed: 1
   laserSound: {fileID: 8300000, guid: edeee080966483a4484df1d4055fc330, type: 3}
-  shootVolume: 0.5
 --- !u!114 &2765230177690693485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +132,8 @@ MonoBehaviour:
   enemyType: Laser
   explosionAnim: {fileID: 5613652202286379538, guid: 880e9b882e5e6564abfebbf5d8464e33, type: 3}
   scale: 0.7
+  instantKilledByBomb: 1
+  bombDamage: 20
 --- !u!50 &5881056659598207218
 Rigidbody2D:
   serializedVersion: 5

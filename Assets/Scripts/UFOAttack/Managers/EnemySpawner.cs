@@ -49,6 +49,8 @@ public class EnemySpawner : MonoBehaviour
 
     private float startTime;
 
+    private bool canSpawn = true;
+
     void Start()
     {
         startTime = Time.time;
@@ -61,16 +63,23 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(BossSpawnLoop());
     }
 
+    public void SetSpawning(bool value)
+    {
+        canSpawn = value;
+    }
+
     IEnumerator BossSpawnLoop()
     {
-        yield return new WaitForSeconds(bossStartDelay);
+        yield return StartCoroutine(PauseAwareDelay(bossStartDelay));
 
         while (true)
         {
+            yield return StartCoroutine(WaitUntilSpawningEnabled());
+
             SpawnEnemy(BossPrefab, 0f, 0f);
 
             float delay = GetCurrentDelay(bossStartMinDelay, bossStartMaxDelay);
-            yield return new WaitForSeconds(delay);
+            yield return StartCoroutine(PauseAwareDelay(delay));
         }
     }
 
@@ -80,9 +89,33 @@ public class EnemySpawner : MonoBehaviour
         {
             float delay = GetCurrentDelay(startMinDelay, startMaxDelay);
 
-            yield return new WaitForSeconds(delay);
+            yield return StartCoroutine(PauseAwareDelay(delay));
+            yield return StartCoroutine(WaitUntilSpawningEnabled());
 
             SpawnEnemy(prefab, minY, maxY);
+        }
+    }
+
+    private IEnumerator WaitUntilSpawningEnabled()
+    {
+        while (!canSpawn)
+        {
+            yield return null;
+        }
+    }
+
+    private IEnumerator PauseAwareDelay(float duration)
+    {
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            if (canSpawn)
+            {
+                timer += Time.deltaTime;
+            }
+
+            yield return null;
         }
     }
 

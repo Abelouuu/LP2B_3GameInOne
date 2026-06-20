@@ -13,15 +13,19 @@ public class PlayerShoot : MonoBehaviour
 
     public float fireRate = 0.2f; // temps entre deux tirs
 
+    private float baseFireRate;
     private float nextFireTime = 0f;
+
+    private void Awake()
+    {
+        baseFireRate = fireRate;
+    }
 
     void Update()
     {
-        // Tant que la touche espace est maintenue
         if (Input.GetKey(KeyCode.Space) && Time.time >= nextFireTime)
         {
             Shoot();
-
             nextFireTime = Time.time + fireRate;
         }
     }
@@ -30,8 +34,8 @@ public class PlayerShoot : MonoBehaviour
     {
         AudioManager.Instance.PlaySFX(shootSound, volume);
 
-        GameObject laser1 = Instantiate(laserPrefab,transform.position + Vector3.up * 0.2f,Quaternion.identity);
-        GameObject laser2 = Instantiate(laserPrefab,transform.position + Vector3.up * -0.2f,Quaternion.identity);
+        GameObject laser1 = Instantiate(laserPrefab, transform.position + Vector3.up * 0.2f, Quaternion.identity);
+        GameObject laser2 = Instantiate(laserPrefab, transform.position + Vector3.up * -0.2f, Quaternion.identity);
 
         laser1.GetComponent<ProjectileMovement>().SetDirection(Vector2.right);
         laser2.GetComponent<ProjectileMovement>().SetDirection(Vector2.right);
@@ -49,10 +53,11 @@ public class PlayerShoot : MonoBehaviour
 
     private IEnumerator FireRateBonus(float fireRateMultiplier, float duration)
     {
-        fireRate *= fireRateMultiplier;
+        fireRate = baseFireRate * fireRateMultiplier;
 
         yield return new WaitForSeconds(duration);
 
-        fireRate /= fireRateMultiplier;
+        fireRate = baseFireRate;
+        fireRateCoroutine = null;
     }
 }
