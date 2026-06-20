@@ -19,6 +19,7 @@ public class GameOverDeathAnim : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioClip urgencySound;
     [SerializeField] private AudioClip gameOverBoom;
+    [SerializeField] private AudioClip deathCry;
 
     private IEnumerator ShakePlayer()
     {
@@ -50,6 +51,10 @@ public class GameOverDeathAnim : MonoBehaviour
 
         explosion.transform.localScale = Vector3.one * explosionScale;
         Destroy(explosion, explosionDestroyDelay);
+    }
+    private void DeathCry()
+    {
+        AudioManager.Instance.PlayGameOverMusic(deathCry);
     }
 
     private void HidePlayer()

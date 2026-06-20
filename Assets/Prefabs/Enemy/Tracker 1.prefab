@@ -110,12 +110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96103ae00136af64792dab198246d2e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  shootVolume: 0.5
   playerObject: {fileID: 0}
   trackingMissilePrefab: {fileID: 3520895244302740301, guid: 4f4639e4868702540a914941240c8bff, type: 3}
   enterSpeed: 3
   exitSpeed: 10
-  missileSound: {fileID: 8300000, guid: 746761c0c00e7fa449c8813e395ac571, type: 3}
-  shootVolume: 0.5
+  missileSound: {fileID: 8300000, guid: af186dbc87a69514fb86535c460e611f, type: 3}
 --- !u!114 &8614065395959809366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +133,10 @@ MonoBehaviour:
   enemyType: Tracker
   explosionAnim: {fileID: 5613652202286379538, guid: 880e9b882e5e6564abfebbf5d8464e33, type: 3}
   scale: 0.8
+  canBeEvacuatedByBossEvent: 1
+  bossHealthBarUI: {fileID: 0}
+  instantKilledByBomb: 1
+  bombDamage: 20
 --- !u!50 &7268519527184855870
 Rigidbody2D:
   serializedVersion: 5

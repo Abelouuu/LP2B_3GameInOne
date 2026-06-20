@@ -540,10 +540,10 @@ MonoBehaviour:
   missileDelay: 0.25
   laserWarningDelay: 0.4
   laserAngleSpread: 20
-  projectileSound: {fileID: 8300000, guid: f9fba8cc4db620a4c919453565d0271f, type: 3}
-  missileSound: {fileID: 8300000, guid: 746761c0c00e7fa449c8813e395ac571, type: 3}
-  laserSound: {fileID: 8300000, guid: edeee080966483a4484df1d4055fc330, type: 3}
-  summonSound: {fileID: 8300000, guid: 8c56cb77797ec584593dcfffbc92b6d2, type: 3}
+  projectileSound: {fileID: 8300000, guid: fe792c3120936a64cac36f3cc520a866, type: 3}
+  missileSound: {fileID: 8300000, guid: af186dbc87a69514fb86535c460e611f, type: 3}
+  laserSound: {fileID: 8300000, guid: 794f2adde3a41414d8d4b324862ef52e, type: 3}
+  summonSound: {fileID: 8300000, guid: 32f42384c86bf3b42b1e25bcb5483477, type: 3}
 --- !u!1 &8941181327643489845
 GameObject:
   m_ObjectHideFlags: 0

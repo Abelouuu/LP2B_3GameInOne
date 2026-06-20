@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   laserPrefab: {fileID: 255038659069795767, guid: c996f341531ef1a42a7ecdbb6e4e432f, type: 3}
-  shootSound: {fileID: 8300000, guid: 8b7b1534e64dce4499f67f0661420aab, type: 3}
+  shootSound: {fileID: 8300000, guid: 7dd76c88cefa76049bfe1cfc4011e31d, type: 3}
   volume: 1
   fireRate: 0.3
 --- !u!114 &68568718
@@ -367,7 +367,7 @@ MonoBehaviour:
   - {fileID: 867076640}
   - {fileID: 1051355311}
   playerShield: {fileID: 68568729}
-  damageSound: {fileID: 8300000, guid: 8822931191105eb438dc1355a7b024aa, type: 3}
+  damageSound: {fileID: 8300000, guid: ec43127ee66767047aadd27447c23c89, type: 3}
   volume: 1
   animationSpeed: 4
 --- !u!210 &68568723
@@ -405,7 +405,7 @@ MonoBehaviour:
   playerMovement: {fileID: 68568712}
   playerShield: {fileID: 68568729}
   bombManager: {fileID: 1337585379}
-  bonusSound: {fileID: 8300000, guid: 0561329160ca6c448b13613893c54d03, type: 3}
+  bonusSound: {fileID: 8300000, guid: be8f0eba6c932e34ba42afdb08f95ba2, type: 3}
 --- !u!114 &68568729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9506,7 +9506,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 70f7c9ad93947b747950b06b27116108, type: 3}
+  m_Resource: {fileID: 8300000, guid: aae1347ee49fd9a428d1a7bf6d75a390, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1.1
@@ -10068,9 +10068,9 @@ MonoBehaviour:
   gameOverMenuDelay: 4.5
   player: {fileID: 68568707}
   gameSceneName: UFOAttack
-  gameMusic: {fileID: 8300000, guid: 5add57e16f2896942ba324870f251351, type: 3}
-  pauseSound: {fileID: 8300000, guid: b72990a50691cfc40b0fd588e1a44860, type: 3}
-  gameOverMusic: {fileID: 8300000, guid: c7b22e3063984b143a27f0dd949f90a9, type: 3}
+  gameMusic: {fileID: 8300000, guid: 6c6d839a3e10f9d4789ecf876d79ac47, type: 3}
+  pauseSound: {fileID: 8300000, guid: f0d732445c8150f4491b0cea94e5cc0c, type: 3}
+  gameOverMusic: {fileID: 8300000, guid: 9381c26e4ba7f4e4788dad367d4c5ff4, type: 3}
 --- !u!114 &1123756321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10091,8 +10091,8 @@ MonoBehaviour:
   eventBossSpawnPoint: {fileID: 2018281715}
   playerObject: {fileID: 68568707}
   bossHealthBarUI: {fileID: 244707198}
-  bossDisplayName: BIGBOSS
-  bossMusic: {fileID: 8300000, guid: eb3d18ab4caf2f444a3ab9987ce57b09, type: 3}
+  bossDisplayName: MEGA BOSS
+  bossMusic: {fileID: 8300000, guid: e9e967060fefaf64082a809edf49bbab, type: 3}
   bossMusicFadeInDuration: 2
   bossMusicFadeOutDuration: 2
 --- !u!1 &1127731987
@@ -11011,8 +11011,8 @@ MonoBehaviour:
   bombAvailableSprite: {fileID: 21300000, guid: 4f10a8ac98d97634b8a66571e09c226c, type: 3}
   bombEmptySprite: {fileID: 21300000, guid: a6fcf645d31a9cc459b06898477930e8, type: 3}
   bombExplosionPrefab: {fileID: 9040461909084127725, guid: 8c34ef6be998394488a59e5be58e9d8f, type: 3}
-  errorSound: {fileID: 8300000, guid: 904015e8ae6ca7f4685ae0c5e4e15a75, type: 3}
-  bombSound: {fileID: 8300000, guid: 713345d06b11c9346b1afd5bb13bd324, type: 3}
+  errorSound: {fileID: 8300000, guid: b5ee30e74a779604aaf278b35161c034, type: 3}
+  bombSound: {fileID: 8300000, guid: f128c57be82e7424cb8937701e320853, type: 3}
 --- !u!4 &1337585380
 Transform:
   m_ObjectHideFlags: 0
@@ -11968,8 +11968,9 @@ MonoBehaviour:
   explosionPrefab: {fileID: 8808913111898810265, guid: 5a9f0187f8b986e4fbd15861216e97a7, type: 3}
   explosionScale: 1
   explosionDestroyDelay: 1.5
-  urgencySound: {fileID: 8300000, guid: 50bae0d4603c8e244ac755577ef42d54, type: 3}
-  gameOverBoom: {fileID: 8300000, guid: 15ee607f5fbcb804a92676c58176ce72, type: 3}
+  urgencySound: {fileID: 8300000, guid: 71fa66cbe09615e4da164b87e071c4f4, type: 3}
+  gameOverBoom: {fileID: 8300000, guid: 25f478d509d1d2d44b1eac12b1b3d6ba, type: 3}
+  deathCry: {fileID: 8300000, guid: 908044b6c2f5c80449d5c260129b104c, type: 3}
 --- !u!1 &1487575919
 GameObject:
   m_ObjectHideFlags: 0

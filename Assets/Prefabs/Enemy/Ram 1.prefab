@@ -5000,7 +5000,7 @@ MonoBehaviour:
   pauseDuration: 1
   visibleXPosition: 8
   destroyXPosition: -10
-  chargeSound: {fileID: 8300000, guid: 123523928d088af4487e9adced8fe7bb, type: 3}
+  chargeSound: {fileID: 8300000, guid: 336e2ad40562dde4593598a14213bb14, type: 3}
 --- !u!50 &3359719184120698918
 Rigidbody2D:
   serializedVersion: 5
@@ -5071,6 +5071,8 @@ MonoBehaviour:
   enemyType: Ram
   explosionAnim: {fileID: 5613652202286379538, guid: 880e9b882e5e6564abfebbf5d8464e33, type: 3}
   scale: 0.3
+  canBeEvacuatedByBossEvent: 1
+  bossHealthBarUI: {fileID: 0}
   instantKilledByBomb: 1
   bombDamage: 20
 --- !u!114 &3992302482227045147

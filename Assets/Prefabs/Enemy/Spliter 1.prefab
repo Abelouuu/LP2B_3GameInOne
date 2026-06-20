@@ -188,6 +188,10 @@ MonoBehaviour:
   enemyType: Blue
   explosionAnim: {fileID: 5613652202286379538, guid: 880e9b882e5e6564abfebbf5d8464e33, type: 3}
   scale: 0.9
+  canBeEvacuatedByBossEvent: 1
+  bossHealthBarUI: {fileID: 0}
+  instantKilledByBomb: 1
+  bombDamage: 20
 --- !u!114 &8900140161971140020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf425ceebb0eb2e46996751a79f11926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  shootVolume: 0.5
   missilePrefab: {fileID: 4121519260670847015, guid: be041ba9fbe0714459ea5922ab3ba30b, type: 3}
   secondMissilePrefab: {fileID: 7354719927251336274, guid: e6d3eef20afca6b4e8c8705a9fa67747, type: 3}
   explosionEffect: {fileID: 7467538169324563531, guid: 8a1870bb0d21cd94696c543a62108c8a, type: 3}
@@ -207,9 +212,8 @@ MonoBehaviour:
   verticalSpeed: 1
   shotInterval: 4
   timeBeforeSplit: 1.5
-  missileSound: {fileID: 8300000, guid: 746761c0c00e7fa449c8813e395ac571, type: 3}
-  projectileSound: {fileID: 8300000, guid: f9fba8cc4db620a4c919453565d0271f, type: 3}
-  shootVolume: 0.5
+  missileSound: {fileID: 8300000, guid: af186dbc87a69514fb86535c460e611f, type: 3}
+  projectileSound: {fileID: 8300000, guid: fe792c3120936a64cac36f3cc520a866, type: 3}
 --- !u!114 &927962449324743268
 MonoBehaviour:
   m_ObjectHideFlags: 0

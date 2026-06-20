@@ -192,6 +192,16 @@ public class AudioManager : MonoBehaviour
         sfxSource.PlayOneShot(clip, volume);
     }
 
+    public void SetSFXVolume(float volume)
+    {
+        baseSFXVolume = Mathf.Clamp01(volume);
+
+        if (sfxSource != null)
+        {
+            sfxSource.volume = baseSFXVolume;
+        }
+    }
+
     public void PlayGameOverSFX(AudioClip clip, float volume = 1f)
     {
         if (gameOverSource == null || clip == null)

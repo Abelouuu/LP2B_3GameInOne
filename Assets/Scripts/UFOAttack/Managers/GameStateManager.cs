@@ -116,6 +116,8 @@ public class GameStateManager : MonoBehaviour
         isGameOver = true;
         isPaused = false;
 
+        AudioManager.Instance.SetSFXVolume(0.3f);
+
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
 

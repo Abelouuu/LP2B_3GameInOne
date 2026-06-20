@@ -5023,7 +5023,7 @@ MonoBehaviour:
   stepWidth: 2.5
   speed: 2
   bulletPrefab: {fileID: 5617139668712009251, guid: 1e81cb0196b730f4dab09c42557d8b7a, type: 3}
-  projectileSound: {fileID: 8300000, guid: f9fba8cc4db620a4c919453565d0271f, type: 3}
+  projectileSound: {fileID: 8300000, guid: fe792c3120936a64cac36f3cc520a866, type: 3}
 --- !u!114 &2951137580009726432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5041,6 +5041,8 @@ MonoBehaviour:
   enemyType: Purple
   explosionAnim: {fileID: 5613652202286379538, guid: 880e9b882e5e6564abfebbf5d8464e33, type: 3}
   scale: 0.6
+  canBeEvacuatedByBossEvent: 1
+  bossHealthBarUI: {fileID: 0}
   instantKilledByBomb: 1
   bombDamage: 20
 --- !u!114 &4459718631573508816

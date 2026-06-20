@@ -4978,6 +4978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1ef9f5db393a240b52f2a40a987153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  shootVolume: 0.5
   playerObject: {fileID: 0}
   projectilePrefab: {fileID: 7354719927251336274, guid: e6d3eef20afca6b4e8c8705a9fa67747, type: 3}
   laserPrefab: {fileID: 1997216839028825819, guid: 841ef04a7ed329a45b195cf69ea89a77, type: 3}
@@ -4993,9 +4994,8 @@ MonoBehaviour:
   teleportRotationSpeed: 720
   aimRotationSpeed: 360
   aimPrecision: 2
-  laserSound: {fileID: 8300000, guid: edeee080966483a4484df1d4055fc330, type: 3}
-  projectileSound: {fileID: 8300000, guid: f9fba8cc4db620a4c919453565d0271f, type: 3}
-  shootVolume: 0.5
+  laserSound: {fileID: 8300000, guid: 794f2adde3a41414d8d4b324862ef52e, type: 3}
+  projectileSound: {fileID: 8300000, guid: fe792c3120936a64cac36f3cc520a866, type: 3}
 --- !u!50 &3288123437514673935
 Rigidbody2D:
   serializedVersion: 5
@@ -5086,6 +5086,10 @@ MonoBehaviour:
   enemyType: Boss
   explosionAnim: {fileID: 5613652202286379538, guid: 880e9b882e5e6564abfebbf5d8464e33, type: 3}
   scale: 1
+  canBeEvacuatedByBossEvent: 1
+  bossHealthBarUI: {fileID: 0}
+  instantKilledByBomb: 1
+  bombDamage: 20
 --- !u!114 &4450551065388252079
 MonoBehaviour:
   m_ObjectHideFlags: 0

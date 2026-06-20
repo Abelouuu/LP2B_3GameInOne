@@ -114,7 +114,7 @@ MonoBehaviour:
   laserPrefab: {fileID: 1997216839028825819, guid: 841ef04a7ed329a45b195cf69ea89a77, type: 3}
   horizontalSpeed: 5
   verticalSpeed: 1
-  laserSound: {fileID: 8300000, guid: edeee080966483a4484df1d4055fc330, type: 3}
+  laserSound: {fileID: 8300000, guid: 794f2adde3a41414d8d4b324862ef52e, type: 3}
 --- !u!114 &2765230177690693485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +132,8 @@ MonoBehaviour:
   enemyType: Laser
   explosionAnim: {fileID: 5613652202286379538, guid: 880e9b882e5e6564abfebbf5d8464e33, type: 3}
   scale: 0.7
+  canBeEvacuatedByBossEvent: 1
+  bossHealthBarUI: {fileID: 0}
   instantKilledByBomb: 1
   bombDamage: 20
 --- !u!50 &5881056659598207218
