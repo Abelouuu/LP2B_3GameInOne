@@ -34,12 +34,6 @@ public class PaddleMovement : MonoBehaviour
 
     void Update()
     {
-        // TP REQUIREMENT: Return to the main menu when Escape is pressed
-        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
-
         // Gather keyboard horizontal input
         float mouvement = 0f;
         if (Keyboard.current != null)

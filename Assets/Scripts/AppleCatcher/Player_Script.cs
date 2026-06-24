@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Controls the player's movement, game timer, score tracking, and interaction with falling fruits.
@@ -59,6 +60,10 @@ public class Player_Script : MonoBehaviour
         // Enforce boundary constraints so CatchBoy cannot navigate off-screen
         float clampedX = Mathf.Clamp(transform.position.x, -8.5f, 8.5f);
         transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
+        
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            SceneManager.LoadScene("MainMenu");
+        }
 
         // 2. TIMING AND SESSION END DETECTION
         if (timeRemaining > 0)
@@ -129,7 +134,7 @@ public class Player_Script : MonoBehaviour
         // Update the 3D TextMeshPro object with the refreshed score data
         if (displayed_text != null)
         {
-            displayed_text.text = "Score : " + score;
+            displayed_text.text = "Score  " + score;
         }
 
         // Save the updated score record into system registries for cross-scene transition access

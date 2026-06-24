@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro; 
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem; // Required for Keyboard input
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
     [Header("End Screens")]
     public GameObject panneauGameOver;   
     public GameObject ecranVictoire;     
+    public GameObject ecranpause;
+    
 
     [Header("End Screen Score Texts")]
     public TextMeshProUGUI texteScoreFinDefaite;  
@@ -28,7 +31,9 @@ public class GameManager : MonoBehaviour
     [Header("Global Audio")]
     public AudioSource audioSourceGlobal; 
     public AudioClip sonVictoire;         
-    public AudioClip sonDefaite; // 🌟 NEW: Slot to drag and drop your game over sound effect
+    public AudioClip sonDefaite; 
+
+    private bool estEnPause = false; 
 
     private void Awake()
     {
@@ -43,6 +48,43 @@ public class GameManager : MonoBehaviour
         
         Time.timeScale = 1f; 
         MettreAJourUI();
+    }
+
+    void Update()
+    {
+        // 🌟 NEW: Pressing Escape now toggles the Pause Menu instead of quitting!
+        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            BoutonTogglePause();
+        }
+    }
+
+    // Action linked to your Pause Button or Escape key
+    public void BoutonTogglePause()
+    {
+        if (panneauGameOver.activeSelf || ecranVictoire.activeSelf) return;
+
+        estEnPause = !estEnPause;
+
+        if (estEnPause)
+        {
+            Time.timeScale = 0f; // Freeze the game
+            ecranpause.SetActive(true);
+            Debug.Log("Game Paused via Button/Escape");
+        }
+        else
+        {
+            Time.timeScale = 1f; // Resume the game
+            ecranpause.SetActive(false);
+            Debug.Log("Game Resumed via Button/Escape");
+        }
+    }
+
+    // 🌟 LINKED SCENE FIX: This function now targets your exact "Main Menu" scene
+    public void BoutonMenuPrincipal()
+    {
+        Time.timeScale = 1f; // CRUCIAL: Always reset time scale to 1 before changing scenes!
+        SceneManager.LoadScene("MainMenu"); // Loads your scene named "Main Menu"
     }
 
     public void AjouterPoints(int points)
@@ -66,7 +108,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("GameManager: VICTORY!");
         CouperTousLesSons();
         
-        // 🌟 Play the victory sound effect
         if (audioSourceGlobal != null && sonVictoire != null)
         {
             audioSourceGlobal.clip = sonVictoire;
@@ -122,7 +163,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("GameManager: GAME OVER!");
         CouperTousLesSons();
 
-        // 🌟 NEW: Play the game over sound effect
         if (audioSourceGlobal != null && sonDefaite != null)
         {
             audioSourceGlobal.clip = sonDefaite;
@@ -159,11 +199,5 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f; 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void BoutonMenuPrincipale()
-    {
-        Time.timeScale = 1f; 
-        SceneManager.LoadScene("MainMenu"); 
     }
 }

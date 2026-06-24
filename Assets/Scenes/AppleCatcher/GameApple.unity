@@ -1106,8 +1106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fe77f5e1d018b4c82af87c8899526d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
-  timeRemaining: 120
+  speed: 15
+  timeRemaining: 60
   rottenSound: {fileID: 8300000, guid: 4017b83c6c242634b9093a888cf3b054, type: 3}
   displayed_text: {fileID: 1248441415}
   timer_text: {fileID: 1362673291}

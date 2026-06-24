@@ -11,11 +11,7 @@ public class BonusEtoile : MonoBehaviour
         // 1. Constant downward movement
         transform.Translate(Vector2.down * vitesseDescente * Time.deltaTime);
 
-        // 2. TP REQUIREMENT: Return to the main menu when Escape is pressed
-        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            SceneManager.LoadScene("MenuPrincipal");
-        }
+        
 
         // Safety destroy if the star falls out of bounds
         if (transform.position.y < -6f)

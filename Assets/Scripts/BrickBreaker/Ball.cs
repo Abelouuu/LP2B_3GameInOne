@@ -36,10 +36,8 @@ public class Ball : MonoBehaviour
             nouvellePosition.y += decalageHauteur; 
             transform.position = nouvellePosition;
 
-            bool toucheEspacePressee = Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame;
-            bool clicGauchePresse = Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame;
-
-            if (toucheEspacePressee || clicGauchePresse)
+            
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 LancerBalle();
             }
