@@ -2,14 +2,21 @@ using UnityEngine;
 
 public class DestroyPlayerProj : MonoBehaviour
 {
+    // Animation d'explosion jouée quand le projectile du joueur est détruit
     public GameObject explosionAnim;
-    // Update is called once per frame
-    void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Missile")
+        // Si le projectile touche un ennemi ou un missile
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Missile"))
         {
-            explosionAnim = Instantiate(explosionAnim, transform.position, Quaternion.identity);
-            Destroy(explosionAnim, 1f);
+            // Crée l'animation d'explosion à la position du projectile
+            GameObject explosion = Instantiate(explosionAnim, transform.position, Quaternion.identity);
+
+            // Détruit l'explosion après 1 seconde
+            Destroy(explosion, 1f);
+
+            // Détruit le projectile du joueur
             Destroy(gameObject);
         }
     }
