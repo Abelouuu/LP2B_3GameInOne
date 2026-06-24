@@ -1,4 +1,8 @@
 LP2B project realized by Abel Haller and Abdelrahim Yakhlef
+
+Link to download the asset package: https://we.tl/t-TE8ZcUDFAwTaXRwJ
+this link expires on June 27, 2026, at 7:00 p.m.
+
 # Mini-Games Project 3 Game In 1
 
 This project contains three mini-games developed in Unity.
