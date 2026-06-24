@@ -5,6 +5,7 @@ public class Ball : MonoBehaviour
 {
     [Header("Ball Physics")]
     public float vitesseInitiale = 5f;
+    
     private float vitesse;
     private Rigidbody2D rb;
 
@@ -28,7 +29,7 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
-        // Handle ball position and input when it is attached to the paddle
+        // Handle ball position and input when it is attached to the paddle.
         if (estColleeAuPaddle && paddle != null)
         {
             Vector3 nouvellePosition = paddle.transform.position;
