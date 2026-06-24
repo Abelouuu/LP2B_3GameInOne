@@ -5,6 +5,13 @@ public class MenuTransition : MonoBehaviour
 {
     [SerializeField] private Animator fadeAnimator;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitGame();
+        }
+    }
     private string sceneToLoad;
 
     public void LoadSceneWithFade(string sceneName)
