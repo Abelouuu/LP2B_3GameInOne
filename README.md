@@ -1,143 +1,257 @@
-# UFOAttack
+# Mini-Games Project README
 
-## 1. Game Overview and Features
+This project contains three mini-games developed in Unity.
+Each game has its own gameplay mechanics, additional features, and technical improvements.
 
-**UFOAttack** is a 2D shooting game in which the player controls a spaceship.  
-The main objective is to score as many points as possible by destroying enemies that appear on screen.
-
-The player must survive as long as possible while avoiding enemy projectiles and collecting the different bonuses available during the game.
-
-### Player Objective
-
-The goal of the game is to destroy as many enemies as possible in order to achieve the highest score.
-
-Each enemy gives a certain number of points when defeated. The number of points depends on the enemy’s strength and difficulty: the more dangerous or resistant an enemy is, the more points it gives.
-
-### Controls
-
-| Action | Key |
-|---|---|
-| Move the player | Arrow keys |
-| Main shot | Space bar |
-| Use mega bomb | E key |
-
-### Health System and Interface
-
-At the beginning of the game, the player has **10 health points**.
-
-The interface displays important information during the game:
-
-- the player’s health points in the top-left corner;
-- the number of available mega bombs at the top-center of the screen;
-- the player’s score in the top-right corner.
-
-At the start of the game, a countdown is displayed so that the player has time to get ready before the game actually begins.
-
-### Enemies
-
-The game contains **six different types of enemies**.
-
-Each enemy type has its own behavior, number of health points and point value. Some enemies move across the screen, while others shoot projectiles, use missiles, move in a specific way or directly target the player.
-
-This variety makes the game more dynamic because the player has to adapt their strategy depending on the enemies they face.
-
-### Projectiles and Weapons
-
-The game contains three main types of projectiles.
-
-#### Standard Projectile
-
-The standard projectile is the basic weapon of the game.  
-It deals **1 damage point**.
-
-It is used by the player and also by some weaker enemies.
-
-#### Missile
-
-The missile is stronger than the standard projectile.  
-It deals **2 damage points**.
-
-There is also a special type of missile, created as a *nested prefab* from the standard missile. This missile can track an enemy for a short time before locking onto its target and then continuing in a straight line.
-
-#### Laser
-
-The laser is the most powerful projectile in the game.  
-It deals **3 damage points**.
-
-However, its damage is only active when the laser is in its thick phase, which makes it work differently from the other projectiles.
-
-### Bonuses
-
-Bonuses appear randomly during the game.  
-They spawn at more or less regular intervals and move from right to left.
-
-There are five types of bonuses:
-
-| Bonus | Effect |
-|---|---|
-| Speed boost | Temporarily increases the player’s movement speed |
-| Fire rate boost | Temporarily increases the player’s shooting rate |
-| Health boost | Restores 3 health points |
-| Shield | Creates a shield around the player, protecting them before gradually weakening and being destroyed |
-| Mega bomb | Adds a bomb that can be used with the E key and destroys almost all enemies on the map |
-
-Bonuses appear randomly, so it may take more or less time to obtain a specific bonus.
-
-### End of the Game
-
-When the player has no health points left, the game ends and a **Game Over** menu appears.
-
-This menu displays:
-
-- the final score;
-- the number of enemies killed for each enemy type.
-
-From this menu, the player can restart the game or return to the main menu.
+The goal of this README is not to fully explain the basic rules of each game, but rather to highlight the main systems and improvements implemented during development.
 
 ---
 
-## 2. Additional Features Compared to the Initial Requirements
+# 1. UFOAttack
 
-Several additional features were added to improve the gameplay and make the game more complete.
+## Quick Overview
 
-### Additional Bonuses
+**UFOAttack** is a 2D shooting game in which the player controls a spaceship and must survive while destroying enemies.
+The player can move with the arrow keys, shoot with the space bar, and use a mega bomb with the `E` key.
 
-Some bonuses were not included in the initial requirements.
+The game includes several enemy types, different projectile categories, bonuses, a score system, and a Game Over screen showing the final performance.
 
-The following bonuses were added:
+## Main Added Features
 
-- fire rate boost;
-- speed boost;
-- shield.
+### Multiple Enemy Behaviors
 
-These additions make the gameplay more varied and give the player more options to survive or become more efficient.
+The game includes several enemy types, each with a specific behavior, amount of health, and score value.
 
-### Specific Behavior of the Blue Enemy
+Some enemies move in simple patterns, while others use more complex attacks such as missiles, lasers, teleportation, or direct targeting of the player.
 
-The blue enemy has a special shooting pattern.
+### Improved Blue Enemy Attack
 
-It fires two missiles: one goes upward and the other goes downward. After a short delay, these missiles explode and each one creates two smaller projectiles.
+The blue enemy has a custom attack pattern.
+It fires two missiles: one travels upward and the other downward. After a short delay, both missiles explode and generate smaller projectiles.
 
-This behavior makes the blue enemy more dangerous because its shots cover a larger area and force the player to pay more attention to their movements.
+This creates a wider danger zone and forces the player to react more carefully.
 
-### Modified Boss Behavior
+### Advanced Boss-Type Enemy
 
-The boss behavior was improved to make it harder to defeat.
+A stronger enemy type was added with a more complex behavior than standard enemies.
+This enemy can teleport between different positions, aim at the player, and randomly choose between different attacks.
 
-Instead of moving in a simple way, the boss teleports from point to point on the map. This makes its position less predictable and makes it more difficult for the player to hit it.
+Its attacks include:
 
-The boss also aims at the player before attacking. It has two types of attacks:
+* projectile bursts aimed at the player;
+* laser attacks;
+* unpredictable positioning through teleportation.
 
-1. **Projectile burst**  
-   The boss fires several projectiles toward the player, with slight variations in direction.
+### Recurring Boss Event
 
-2. **Laser shot**  
-   The boss fires a laser toward the player.
+A special boss phase was added to make the game more dynamic.
 
-The attack is chosen randomly. However, the projectile burst is more likely to be used than the laser attack.
+At regular intervals during the game:
 
-### Improved Game Over Screen
+* the normal enemy spawn is paused;
+* enemies currently on screen evacuate the play area;
+* the game transitions into a boss phase;
+* a powerful event boss appears;
+* after the boss is defeated, the normal game resumes.
 
-The Game Over screen does not only display the final score.
+This makes the game feel less repetitive and creates important moments during the run.
 
-It also shows the number of enemies killed for each enemy type. This allows the player to get a more detailed summary of their game and better understand their performance.
+### Boss Music Transition
+
+During the boss event, the normal background music smoothly transitions into a dedicated boss music track.
+
+When the boss is defeated, the game smoothly returns to the normal music.
+This reinforces the feeling of entering and leaving a special game phase.
+
+### Boss Health Bar
+
+A boss health bar was added to the interface.
+
+It includes:
+
+* the boss name displayed above the bar;
+* a slider showing the remaining boss health;
+* a fade-in animation when the boss appears;
+* a fade-out animation when the boss is defeated.
+
+This makes the boss event clearer and more impactful for the player.
+
+### Bonus System
+
+Several bonuses can appear during the game and move from right to left.
+
+The available bonuses are:
+
+* speed boost;
+* fire rate boost;
+* health bonus;
+* shield;
+* mega bomb.
+
+Some of these bonuses were added beyond the initial requirements, especially the speed boost, fire rate boost, and shield.
+
+### Mega Bomb
+
+The player can collect mega bombs and activate them using the `E` key.
+The mega bomb destroys most enemies currently present on the map, giving the player a powerful emergency option.
+
+For boss enemies, the bomb does not necessarily kill them instantly but can deal significant damage instead.
+
+### Detailed Game Over Screen
+
+The Game Over screen displays more than just the final score.
+It also shows how many enemies of each type were defeated.
+
+This gives the player a clearer summary of their performance.
+
+---
+
+# 2. CatchBoy
+
+## Quick Overview
+
+**CatchBoy** is an apple-catching mini-game.
+The player moves horizontally and tries to catch falling fruits within a limited game duration.
+
+The game was expanded with new fruit types, a controlled randomization system, and improved feedback.
+
+## Main Added Features
+
+### Three Fruit Types
+
+The game includes three different fruit types:
+
+* **Red Apple**: standard fruit, gives `+1` point;
+* **Rotten Apple**: negative fruit, gives a `-2` point penalty;
+* **Golden Apple**: rare bonus fruit, gives `+2` points.
+
+The score cannot go below zero, which prevents frustrating negative scores.
+
+### Virtual Bag System
+
+A “virtual bag” system was implemented to control randomness.
+
+Instead of spawning fruits with pure random probability, the spawner creates a bag of 10 fruits with a fixed distribution:
+
+* 7 red apples;
+* 2 rotten apples;
+* 1 golden apple.
+
+The bag is then shuffled, and fruits are spawned one by one.
+When the bag is empty, a new one is generated.
+
+This prevents unfair random streaks, such as too many rotten apples in a row or no golden apples for a long time.
+
+### Balanced Probability System
+
+The fruit distribution is controlled as follows:
+
+* **70%** red apples;
+* **20%** rotten apples;
+* **10%** golden apples.
+
+This keeps the game balanced while still allowing variety during gameplay.
+
+### Audio Feedback
+
+Different audio feedback was added depending on the collected fruit.
+
+Positive fruits use the standard collection sound, while rotten apples use a different sound at a lower volume to avoid being too aggressive for the player.
+
+### Lightweight UI Using TextMeshPro
+
+The game uses world-space `TextMeshPro` components to display information such as score and timer.
+
+This avoids relying on heavier Canvas structures and keeps the interface simple and efficient.
+
+### Persistent Score for Game Over
+
+The final score is stored and transferred to the Game Over scene using `PlayerPrefs`.
+
+This allows the Game Over screen to display the player’s final result after the gameplay scene ends.
+
+---
+
+# 3. Brick Breaker
+
+## Quick Overview
+
+**Brick Breaker** is a classic brick-breaking game where the player controls a paddle and destroys bricks using a ball.
+
+The game includes power-ups, hazards, improved ball physics, score tracking, and end-game feedback.
+
+## Main Added Features
+
+### Drop System
+
+When bricks are destroyed, they can drop special items.
+These items are divided into bonuses and maluses.
+
+The system uses 2D trigger physics to detect item collection accurately.
+
+### Power-Ups
+
+Two positive items were added:
+
+* **Blue Star**: temporarily increases the paddle speed and changes its visual appearance;
+* **Heart Item**: restores one life, up to a maximum of 3 lives.
+
+These bonuses make the gameplay more dynamic and give the player opportunities to recover or gain an advantage.
+
+### Hazards
+
+Two negative items were added:
+
+* **Red Skull**: instantly removes one life and resets the ball;
+* **Black Skull**: temporarily slows down the paddle and changes its visual appearance.
+
+These hazards add risk and force the player to react quickly.
+
+### Anti-Stacking Malus System
+
+A safeguard was added to prevent unfair difficulty spikes.
+
+If the paddle is already affected by the Black Skull slow effect, the drop system prevents additional Black Skulls from appearing until the effect ends.
+
+This prevents the player from being repeatedly punished by the same malus.
+
+### Angular Reflection System
+
+The ball reflection is not random.
+
+The bounce angle depends on where the ball hits the paddle:
+
+* hitting the center creates a more vertical bounce;
+* hitting the edges creates a sharper horizontal angle.
+
+This rewards precise paddle positioning and gives the player more control over the ball trajectory.
+
+### Reactive UI
+
+The game includes UI elements that update in real time, including:
+
+* current score;
+* remaining lives;
+* final score on victory or defeat screens.
+
+This improves clarity during gameplay and gives immediate feedback to the player.
+
+### Victory and Game Over Feedback
+
+When the player wins or loses, the game stops the normal gameplay sounds and plays a dedicated audio effect for the final state.
+
+This makes the end of the game clearer and more polished.
+
+---
+
+# Conclusion
+
+The three mini-games were improved with additional gameplay systems, better feedback, and more polished mechanics.
+
+The main improvements include:
+
+* new enemy and boss behaviors in **UFOAttack**;
+* controlled random generation and fruit variety in **CatchBoy**;
+* power-ups, hazards, and improved ball physics in **Brick Breaker**.
+
+These additions make the games more complete, more balanced, and more enjoyable to play.
