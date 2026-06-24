@@ -12,8 +12,6 @@ public class GameOver_Script : MonoBehaviour
     public TextMeshProUGUI finalScoreDisplay; 
 
     // References to the interactive 2D GameObject buttons in the scene
-    public GameObject replayButton;
-    public GameObject menuButton;
 
     /// <summary>
     /// Called before the first frame update.
@@ -43,33 +41,13 @@ public class GameOver_Script : MonoBehaviour
     /// Called once per frame.
     /// Monitors mouse clicks and uses 2D Raycasting to detect physical clicks on the button GameObjects.
     /// </summary>
-    void Update()
+    public void Replay()
     {
-        // Check if the player has pressed the left mouse button (or tapped the screen)
-        if (Input.GetMouseButtonDown(0)) 
-        {
-            // Convert the screen mouse position into 2D world space coordinates
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            
-            // Cast a ray at the mouse position to check if it hits a 2D Collider
-            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+        SceneManager.LoadScene("GameApple");
+    }
 
-            // Verify if the raycast actually hit an object with a collider
-            if (hit.collider != null)
-            {
-                // Trigger action if the clicked object is the Replay button
-                if (hit.collider.gameObject == replayButton)
-                {
-                    // Reload the main gameplay scene
-                    SceneManager.LoadScene("Game");
-                }
-                // Trigger action if the clicked object is the Menu button
-                else if (hit.collider.gameObject == menuButton)
-                {
-                    // Load the main title screen scene
-                    SceneManager.LoadScene("MainMenu"); 
-                }
-            }
-        }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

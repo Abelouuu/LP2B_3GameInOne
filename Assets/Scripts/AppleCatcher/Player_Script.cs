@@ -134,7 +134,7 @@ public class Player_Script : MonoBehaviour
         // Update the 3D TextMeshPro object with the refreshed score data
         if (displayed_text != null)
         {
-            displayed_text.text = "Score  " + score;
+            displayed_text.text = "Score :" + score;
         }
 
         // Save the updated score record into system registries for cross-scene transition access

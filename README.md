@@ -1,4 +1,5 @@
-# Mini-Games Project README
+# Mini-Games Project 3 Game In 1
+realized by Abel Haller and Abdelrahim Yakhlef
 
 This project contains three mini-games developed in Unity.
 Each game has its own gameplay mechanics, additional features, and technical improvements.
