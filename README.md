@@ -46,7 +46,7 @@ Its attacks include:
 
 A special boss phase was added to make the game more dynamic.
 
-At regular intervals during the game:
+At regular intervals during (1 min) the game:
 
 * the normal enemy spawn is paused;
 * enemies currently on screen evacuate the play area;
