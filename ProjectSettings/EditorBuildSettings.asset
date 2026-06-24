@@ -11,6 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UFOAttack.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/BrickBreaker.unity
+    guid: 6dfe2da7e04541a4386584af0a68bbdf
+  - enabled: 1
+    path: Assets/Scenes/AppleCatcher/TitleApple.unity
+    guid: 94614199abfe62844933f87af6987fa4
+  - enabled: 1
+    path: Assets/Scenes/AppleCatcher/GameApple.unity
+    guid: 88f6ec144ffc73e439a5f68b6d7bbcb1
+  - enabled: 1
+    path: Assets/Scenes/AppleCatcher/GameOverApple.unity
+    guid: cb92ddca741228c45b94ceeb515fa6b6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
